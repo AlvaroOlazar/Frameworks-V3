@@ -1,0 +1,16 @@
+﻿drop database portal_noticias;// Deletar banco de dados;
+create database portal_noticias;// Gerar o banco de dados;
+use portal_noticias;// Indicar qual banco utilizará
+create table noticias(id_noticia INTEGER NOT NULL PRIMARY KEY auto_increment,
+	titulo VARCHAR(100),
+	noticia TEXT,
+	data_criacao TIMESTAMP default current_timestamp
+);
+INSERT INTO noticias(titulo, noticia) VALUES ('Primeira Notícia', 'O Portal foi Lançado');
+INSERT INTO noticias(titulo, noticia) VALUES ('Segunda Notícia', 'O Portal está a todo vapor');
+
+alter table noticias add column resumo varchar(100);
+alter table noticias add column autor varchar(30);
+alter table noticias add column data_noticia date;
+
+SELECT * FROM noticias;
